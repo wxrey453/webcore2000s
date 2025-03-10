@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webcore Aesthetic</title>
+  <!-- Importing several retro 2000s styled fonts from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Orbitron:wght@700&family=Permanent+Marker&family=Audiowide&family=Chewy&display=swap" rel="stylesheet" />
+  <style>
+    /* Base Styling */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://i.imgur.com/7MAy10T.jpeg') no-repeat center center fixed; /* Updated to use Imgur image */
+      background-size: cover;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /* Retro Heading Styling */
+    .retro-heading {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+    .retro-heading .letter {
+      display: inline-block;
+    }
+    .letter-1 {
+      font-family: 'Press Start 2P', cursive;
+    }
+    .letter-2 {
+      font-family: 'VT323', monospace;
+    }
+    .letter-3 {
+      font-family: 'Orbitron', sans-serif;
+    }
+    .letter-4 {
+      font-family: 'Permanent Marker', cursive;
+    }
+    .letter-5 {
+      font-family: 'Audiowide', cursive;
+    }
+    .letter-6 {
+      font-family: 'Chewy', cursive;
+    }
+    /* Search Form Styling */
+    .search {
+      text-align: center;
+      margin: 20px auto;
+    }
+    #searchForm {
+      display: inline-block;
+    }
+    #searchInput {
+      padding: 8px;
+      font-size: 16px;
+      width: 250px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+    #searchForm button {
+      padding: 8px 12px;
+      font-size: 16px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+    #searchForm button:hover {
+      background-color: #555;
+    }
+    /* Image Container Styling */
+    .image-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Retro Heading Above Search -->
+    <div class="retro-heading">
+      <span class="letter letter-1">S</span>
+      <span class="letter letter-2">E</span>
+      <span class="letter letter-3">A</span>
+      <span class="letter letter-4">R</span>
+      <span class="letter letter-5">C</span>
+      <span class="letter letter-6">H</span>
+    </div>
+    <!-- Search Form -->
+    <div class="search">
+      <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search for early 2000s content..." />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <!-- Single Image Display -->
+    <div class="image-container">
+      <img src="5ELRseURWpizpmVmFkivK.jpeg" alt="WINDOW STYLE" />
+    </div>
+  </div>
+  <!-- JavaScript for Search Functionality -->
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      let query = document.getElementById('searchInput').value.trim();
+      // Construct a Google search URL restricted to content between Jan 1, 2000 and Dec 31, 2009.
+      const url =
+        "https://www.google.com/search?q=" +
+        encodeURIComponent(query) +
+        "&tbs=cdr:1,cd_min:1/1/2000,cd_max:12/31/2009";
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>
