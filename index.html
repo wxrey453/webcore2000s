@@ -1,27 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Webcore Aesthetic</title>
+  <!-- Importing several retro 2000s styled fonts from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Orbitron:wght@700&family=Permanent+Marker&family=Audiowide&family=Chewy&display=swap" rel="stylesheet" />
   <style>
-    /* Inline styling for the page */
-
-    /* Container & title styles */
+    /* Base Styling */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
     }
-    .title {
+    /* Retro Heading Styling */
+    .retro-heading {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
+      font-size: 32px;
     }
-
-    /* Search form styling */
+    .retro-heading .letter {
+      display: inline-block;
+    }
+    .letter-1 {
+      font-family: 'Press Start 2P', cursive;
+    }
+    .letter-2 {
+      font-family: 'VT323', monospace;
+    }
+    .letter-3 {
+      font-family: 'Orbitron', sans-serif;
+    }
+    .letter-4 {
+      font-family: 'Permanent Marker', cursive;
+    }
+    .letter-5 {
+      font-family: 'Audiowide', cursive;
+    }
+    .letter-6 {
+      font-family: 'Chewy', cursive;
+    }
+    /* Search Form Styling */
     .search {
-      margin: 20px auto;
       text-align: center;
+      margin: 20px auto;
     }
     #searchForm {
       display: inline-block;
@@ -41,94 +70,56 @@
       color: #fff;
       border-radius: 4px;
       cursor: pointer;
+      margin-left: 5px;
     }
     #searchForm button:hover {
       background-color: #555;
     }
-
-    /* Gallery styling */
-    .gallery {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
+    /* Image Container Styling */
     .image-container {
-      position: relative;
-      margin: 10px;
+      text-align: center;
+      margin: 20px auto;
     }
-    .image {
-      width: 250px;
+    .image-container img {
+      max-width: 100%;
       height: auto;
-      display: block;
-    }
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      font-size: 14px;
-      padding: 10px;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .image-container:hover .overlay {
-      opacity: 1;
-    }
-
-    /* Footer styling */
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 20px;
-      background: #f1f1f1;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="title">Welcome to My Interactive Webcore World!</h1>
-    
-    <!-- Search form for early 2000s-only results -->
+    <!-- Retro Heading Above Search -->
+    <div class="retro-heading">
+      <span class="letter letter-1">S</span>
+      <span class="letter letter-2">E</span>
+      <span class="letter letter-3">A</span>
+      <span class="letter letter-4">R</span>
+      <span class="letter letter-5">C</span>
+      <span class="letter letter-6">H</span>
+    </div>
+    <!-- Search Form -->
     <div class="search">
       <form id="searchForm">
-        <input type="text" id="searchInput" placeholder="Search for early 2000s content...">
+        <input type="text" id="searchInput" placeholder="Search for early 2000s content..." />
         <button type="submit">Search</button>
       </form>
     </div>
-
-    <!-- Gallery -->
-    <div class="gallery">
-      <div class="image-container">
-        <img src="windows-style-dialog.png" alt="Windows Style Dialog" class="image">
-        <div class="overlay">Click to Learn More!</div>
-      </div>
-      <div class="image-container">
-        <img src="your-image-url-2.jpg" alt="Anime Image 2" class="image">
-        <div class="overlay">Click to Learn More!</div>
-      </div>
-      <div class="image-container">
-        <img src="your-image-url-3.jpg" alt="Anime Image 3" class="image">
-        <div class="overlay">Click to Learn More!</div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <p>Explore more content!</p>
+    <!-- Single Image Display -->
+    <div class="image-container">
+      <img src="5ELRseURWpizpmVmFkivK.jpeg" alt="WINDOW STYLE" />
     </div>
   </div>
-  
-  <!-- JavaScript for search functionality with date restrictions -->
+  <!-- JavaScript for Search Functionality -->
   <script>
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
+    document.getElementById('searchForm').addEventListener('submit', function (e) {
       e.preventDefault();
       let query = document.getElementById('searchInput').value.trim();
-      // Construct a Google search URL that restricts results between Jan 1, 2000 and Dec 31, 2009.
-      const url = "https://www.google.com/search?q=" + encodeURIComponent(query) +
-                  "&tbs=cdr:1,cd_min:1/1/2000,cd_max:12/31/2009";
+      // Construct a Google search URL restricted to content between Jan 1, 2000 and Dec 31, 2009.
+      const url =
+        "https://www.google.com/search?q=" +
+        encodeURIComponent(query) +
+        "&tbs=cdr:1,cd_min:1/1/2000,cd_max:12/31/2009";
       window.location.href = url;
     });
   </script>
